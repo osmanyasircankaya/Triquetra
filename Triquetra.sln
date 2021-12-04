@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triquetra.API", "Triquetra.API\Triquetra.API.csproj", "{F5544B07-764F-4F1B-A8DB-66CB942B66DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triquetra.Migrations", "Triquetra.Migrations\Triquetra.Migrations.csproj", "{BE5D5091-6F84-4C68-9626-55A84F4E0052}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triquetra.Infrastructure", "Triquetra.Infrastructure\Triquetra.Infrastructure.csproj", "{350A4900-69B9-47F6-9D2A-B83CE85D7C0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triquetra.Domain", "Triquetra.Domain\Triquetra.Domain.csproj", "{E3FAF105-0016-4436-8C2C-9068DA23CF0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triquetra.Core", "Triquetra.Core\Triquetra.Core.csproj", "{68586EE8-6AC0-41B5-9431-69F0F5F0D1BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5544B07-764F-4F1B-A8DB-66CB942B66DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5544B07-764F-4F1B-A8DB-66CB942B66DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5544B07-764F-4F1B-A8DB-66CB942B66DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5544B07-764F-4F1B-A8DB-66CB942B66DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5D5091-6F84-4C68-9626-55A84F4E0052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5D5091-6F84-4C68-9626-55A84F4E0052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5D5091-6F84-4C68-9626-55A84F4E0052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5D5091-6F84-4C68-9626-55A84F4E0052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350A4900-69B9-47F6-9D2A-B83CE85D7C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350A4900-69B9-47F6-9D2A-B83CE85D7C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350A4900-69B9-47F6-9D2A-B83CE85D7C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350A4900-69B9-47F6-9D2A-B83CE85D7C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3FAF105-0016-4436-8C2C-9068DA23CF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FAF105-0016-4436-8C2C-9068DA23CF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FAF105-0016-4436-8C2C-9068DA23CF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FAF105-0016-4436-8C2C-9068DA23CF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68586EE8-6AC0-41B5-9431-69F0F5F0D1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68586EE8-6AC0-41B5-9431-69F0F5F0D1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68586EE8-6AC0-41B5-9431-69F0F5F0D1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68586EE8-6AC0-41B5-9431-69F0F5F0D1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
