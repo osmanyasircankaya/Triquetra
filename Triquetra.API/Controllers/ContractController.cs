@@ -2,10 +2,10 @@ using System.Net;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Triquetra.Core.Exceptions;
+using Triquetra.Core.Handlers.Commands;
 using Triquetra.Core.Handlers.Queries;
 using Triquetra.Domain.DTO;
 using Triquetra.Domain.DTO.Contracts;
-using Triquetra.Providers.Handlers.Commands;
 using Triquetra.Providers.Handlers.Queries;
 
 namespace Triquetra.API.Controllers

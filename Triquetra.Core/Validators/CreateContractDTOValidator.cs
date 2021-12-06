@@ -8,7 +8,7 @@ namespace Triquetra.Core.Validators
     {
         public CreateContractDTOValidator()
         {
-            RuleFor(x => x.Cost).NotEmpty().WithMessage("Bedel ödemelisin");
+            RuleFor(x => x.Power).NotEmpty().WithMessage("Sözleşme Gücü Boş Bırakılmaz");
         }
     }
 }

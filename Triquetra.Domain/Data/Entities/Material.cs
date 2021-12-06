@@ -7,6 +7,9 @@
         public int MaterialUnitId { get; set; }
         public double? Price { get; set; }
         public double? Cost { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsUnique { get; set; }
+        public bool HasDefaultPrice { get; set; }
         public MaterialUnit MaterialUnit { get; set; }
         public ICollection<ContractMaterial> ContractMaterials { get; set; }
     }
