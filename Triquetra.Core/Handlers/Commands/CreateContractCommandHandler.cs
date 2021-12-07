@@ -250,15 +250,18 @@ namespace Triquetra.Core.Handlers.Commands
             var contractMaterials = _repository.ContractMaterials.GetAll();
             contractMaterials = contractMaterials.Where(s => s.ContractId == entity.Id).ToList();
 
-            var totalPrice = contractMaterials.Select(d => d.Price).Sum();
-            totalPrice = totalPrice + totalPrice * 0.08 + 1000; //MONTAJ VE İŞÇİLİK
+            var contractPrice = contractMaterials.Select(d => d.Price).Sum();
+            contractPrice = contractPrice + contractPrice * 0.08 + 1000; //MONTAJ VE İŞÇİLİK
             
-            var totalCost = contractMaterials.Select(s => s.Cost).Sum();
-            totalCost = totalCost + (totalPrice * 0.08 + 1000) * 0.8; //MONTAJ VE İŞÇİLİK
+            var contractCost = contractMaterials.Select(s => s.Cost).Sum();
+            contractCost = contractCost + (contractPrice * 0.08 + 1000) * 0.8; //MONTAJ VE İŞÇİLİK
 
-            entity.Cost = totalCost;
-            entity.Price = totalPrice;
+            entity.Cost = contractCost;
+            entity.Price = contractPrice;
 
+            entity.TotalPrice = contractPrice + contractPrice * 0.18;
+            entity.TotalCost = contractCost + contractCost * 0.18;
+            
             _repository.Contracts.Update(entity);
             await _repository.CommitAsync();
 
