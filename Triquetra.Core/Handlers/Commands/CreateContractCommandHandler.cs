@@ -62,7 +62,7 @@ namespace Triquetra.Core.Handlers.Commands
                 {
                     if (material.IsUnique && material.HasDefaultPrice)
                     {
-                        var contractMaterial = new ContractMaterial()
+                        var contractMaterial = new ContractMaterial
                         {
                             ContractId = entity.Id,
                             MaterialId = material.Id,
@@ -70,11 +70,18 @@ namespace Triquetra.Core.Handlers.Commands
                             Cost = material.Cost,
                             Quantity = 1
                         };
+
+                        //scada system 
+                        if (material.Id == 22 && entity.Power < 50 * 1000)
+                        {
+                            continue;
+                        }
+
                         _repository.ContractMaterials.Add(contractMaterial);
                     }
                     else
                     {
-                        var contractMaterial = new ContractMaterial()
+                        var contractMaterial = new ContractMaterial
                         {
                             ContractId = entity.Id,
                             MaterialId = material.Id,
@@ -252,7 +259,7 @@ namespace Triquetra.Core.Handlers.Commands
 
             var contractPrice = contractMaterials.Select(d => d.Price).Sum();
             contractPrice = contractPrice + contractPrice * 0.08 + 1000; //MONTAJ VE İŞÇİLİK
-            
+
             var contractCost = contractMaterials.Select(s => s.Cost).Sum();
             contractCost = contractCost + (contractPrice * 0.08 + 1000) * 0.8; //MONTAJ VE İŞÇİLİK
 
@@ -261,7 +268,7 @@ namespace Triquetra.Core.Handlers.Commands
 
             entity.TotalPrice = contractPrice + contractPrice * 0.18;
             entity.TotalCost = contractCost + contractCost * 0.18;
-            
+
             _repository.Contracts.Update(entity);
             await _repository.CommitAsync();
 
