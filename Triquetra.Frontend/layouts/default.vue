@@ -103,14 +103,14 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Products',
+          to: '/products'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Triquetra'
+      title: 'GÜNEŞ ŞİRKETİ'
     }
   }
 }

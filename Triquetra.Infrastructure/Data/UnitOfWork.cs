@@ -20,6 +20,9 @@ namespace Triquetra.Infrastructure.Data
         public IContractRepository Contracts => new ContractRepository(_context);
         public IMaterialUnitRepository MaterialUnits => new MaterialUnitRepository(_context);
         public IContractMaterialRepository ContractMaterials => new ContractMaterialRepository(_context);
+        public IOfferRepository Offers => new OfferRepository(_context);
+        public IProductRepository Products => new ProductRepository(_context);
+        public IProductTypeRepository ProductTypes => new ProductTypeRepository(_context);
 
         public async Task CommitAsync()
         {

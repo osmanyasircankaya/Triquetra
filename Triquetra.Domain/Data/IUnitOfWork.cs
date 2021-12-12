@@ -8,6 +8,9 @@ namespace Triquetra.Domain.Data
         IMaterialRepository Materials { get; }
         IMaterialUnitRepository MaterialUnits { get; }
         IContractMaterialRepository ContractMaterials { get; }
+        IOfferRepository Offers { get; }
+        IProductRepository Products { get; }
+        IProductTypeRepository ProductTypes { get; }
         Task CommitAsync();
     }
 }
