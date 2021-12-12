@@ -19,6 +19,7 @@ namespace Triquetra.API
         {
             services.AddPersistence(Configuration);
             services.AddCore();
+            services.AddCors();
 
             services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 
@@ -55,6 +56,13 @@ namespace Triquetra.API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Triquetra API v1"); });
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+            );
+            
             app.UseRouting();
 
             app.UseAuthorization();

@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     getProducts () {
-      apiservice.post('api/Product').then((data) => {
+      apiservice.get('api/Product').then((data) => {
         this.products = data.data
       }).catch(({ response }) => {
         console.log(response)
