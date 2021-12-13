@@ -5,7 +5,7 @@
         public double SetupArea { get; set; }
         public int InverterCount { get; set; }
         public int PanelCount { get; set; }
-        public float TotalPriceTL { get; set; }
-        public float TotalPriceDollar { get; set; }
+        public double TotalPriceTL { get; set; }
+        public double TotalPriceDollar { get; set; }
     }
 }

@@ -9,7 +9,8 @@ namespace Triquetra.Core.Handlers.Queries
     {
     }
 
-    public class GetAllExchangeRatesQueryHandler : IRequestHandler<GetAllExchangeRatesQuery, IEnumerable<ExchangeRateDTO>>
+    public class
+        GetAllExchangeRatesQueryHandler : IRequestHandler<GetAllExchangeRatesQuery, IEnumerable<ExchangeRateDTO>>
     {
         private readonly IUnitOfWork _repository;
         private readonly IMapper _mapper;
@@ -20,11 +21,11 @@ namespace Triquetra.Core.Handlers.Queries
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ExchangeRateDTO>> Handle(GetAllExchangeRatesQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ExchangeRateDTO>> Handle(GetAllExchangeRatesQuery request,
+            CancellationToken cancellationToken)
         {
             var entities = await Task.FromResult(_repository.ExchangeRates.GetAll());
-            return _mapper.Map<IEnumerable<ExchangeRateDTO>>(entities);
-            //return _mapper.Map<IEnumerable<ExchangeRateDTO>>(entities).OrderByDescending(s => s.Date);
+            return _mapper.Map<IEnumerable<ExchangeRateDTO>>(entities).OrderByDescending(s => s.Date);
         }
     }
 }
