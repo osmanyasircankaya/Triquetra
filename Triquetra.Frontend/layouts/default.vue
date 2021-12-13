@@ -30,7 +30,11 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title>
+        <v-btn color="warning" outlined text :to="{name: 'index'}">
+          {{ title }}
+        </v-btn>
+      </v-toolbar-title>
       <v-divider vertical class="mx-5" />
       <v-text-field id="search-input" class="mt-4" label="Aradğınız ürünü yazınız..." @keydown="validate" />
       <v-divider vertical class="mx-5" />
@@ -79,11 +83,16 @@ export default {
           icon: 'mdi-currency-usd',
           title: 'Dolar Kurları',
           to: '/exchange-rates'
+        },
+        {
+          icon: 'mdi-cart-outline',
+          title: 'Sepet',
+          to: '/cart'
         }
         // {
-        //   icon: 'mdi-cart-outline',
-        //   title: '',
-        //   to: '/exchange-rates'
+        //   icon: 'mdi-file-document-outline',
+        //   title: 'Teklif',
+        //   to: '/offer'
         // }
       ],
       miniVariant: false,

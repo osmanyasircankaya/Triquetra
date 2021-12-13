@@ -18,7 +18,7 @@ namespace Triquetra.Core.Mapper
             CreateMap<MaterialUnit, MaterialUnitDTO>();
             CreateMap<Contract, ContractDTO>();
             CreateMap<Product, ProductDTO>();
-            CreateMap<Product, ProductTypeDTO>();
+            CreateMap<ProductType, ProductTypeDTO>();
             CreateMap<Offer, OfferDTO>();
             CreateMap<ExchangeRate, ExchangeRateDTO>();
         }

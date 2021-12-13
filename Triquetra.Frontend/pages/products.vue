@@ -53,7 +53,7 @@
                   hide-details
                   :items="productTypes"
                   :item-text="item => item.name"
-                  :item-value="item => item.value"
+                  :item-value="item => item.id"
                   label="Tip"
                 />
               </v-col>
@@ -143,16 +143,23 @@ export default {
     return {
       products: [],
       product: {},
-      productTypes: [{ value: 1, name: 'İnvertör' }, { value: 2, name: 'Panel' }]
+      productTypes: []
     }
   },
   mounted () {
     this.getProducts()
+    this.getProductTypes()
   },
   methods: {
     getProducts () {
       apiservice.get('api/Product').then((data) => {
         this.products = data.data
+      }).catch(() => {
+      })
+    },
+    getProductTypes () {
+      apiservice.get('api/ProductType').then((data) => {
+        this.productTypes = data.data
       }).catch(() => {
       })
     },
