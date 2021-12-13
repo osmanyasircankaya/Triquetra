@@ -36,9 +36,19 @@
         </v-btn>
       </v-toolbar-title>
       <v-divider vertical class="mx-5" />
-      <v-text-field id="search-input" class="mt-4" label="Aradğınız ürünü yazınız..." @keydown="validate" />
+      <v-text-field
+        id="search-input"
+        class="mt-4"
+        :maxlength="20"
+        label="Aradğınız ürünü yazınız..."
+        @keydown="validate"
+      />
       <v-divider vertical class="mx-5" />
-      <v-toolbar-title>Sepetim</v-toolbar-title>
+      <v-toolbar-title>
+        <v-btn color="success" outlined text :to="{name: 'cart'}">
+          SEPETİM
+        </v-btn>
+      </v-toolbar-title>
       <v-divider vertical class="mx-5" />
       <v-toolbar-title>gunesirketi@gmail.com</v-toolbar-title>
     </v-app-bar>
@@ -99,6 +109,12 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'GÜNEŞ ŞİRKETİ'
+    }
+  },
+  mounted () {
+    window.onload = () => {
+      const myInput = document.getElementById('search-input')
+      myInput.onpaste = e => e.preventDefault()
     }
   },
   methods: {

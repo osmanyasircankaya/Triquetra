@@ -16,6 +16,7 @@
                   dark
                   label="İsim"
                   required
+                  onpaste="return false;"
                 />
               </v-col>
             </v-row>
@@ -91,9 +92,6 @@
                   Boyut
                 </th>
                 <th>
-                  Fiyat (TL)
-                </th>
-                <th>
                   Fiyat (Dolar)
                 </th>
                 <th>
@@ -116,13 +114,10 @@
                   {{ item.size }}
                 </td>
                 <td class="text-left">
-                  {{ item.tlPrice }}
-                </td>
-                <td class="text-left">
                   {{ item.dollarPrice }}
                 </td>
                 <td class="text-left">
-                  <span v-if="item.productTypeId == 1">İnvertör</span>
+                  <span v-if="item.productTypeId === 1">İnvertör</span>
                   <span v-else>Panel</span>
                 </td>
               </tr>
@@ -166,6 +161,7 @@ export default {
     saveProduct () {
       apiservice.post('api/Product', this.product).then((data) => {
         this.getProducts()
+        this.product = {}
       }).catch(() => {
       })
     }

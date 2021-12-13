@@ -95,7 +95,7 @@
             <v-card-text>
               {{ cart.map(function (s) {
                 return s.name
-              }).join(" ",) }}
+              }).join(", ") }}
             </v-card-text>
           </v-card>
         </v-col>
@@ -185,17 +185,17 @@
             </v-card-title>
             <v-card-text>
               <v-row>
-                <v-col cols="6">
+                <v-col cols="9">
                   SİSTEMİN KURULACAĞI ALAN BOYUTU <br>
                   İNVERTÖR ADEDİ <br>
                   PANEL ADEDİ <br>
                   TOPLAM FİYAT
                 </v-col>
-                <v-col cols="6">
-                  {{ offer.setupArea }} <br>
+                <v-col cols="3">
+                  {{ offer.setupArea }} metrekare <br>
                   {{ offer.inverterCount }} <br>
                   {{ offer.panelCount }} <br>
-                  {{ offer.totalPriceTL.toFixed(2) }}
+                  {{ offer.totalPriceTL.toFixed(2) }} TL
                 </v-col>
               </v-row>
             </v-card-text>
