@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Triquetra.Frontend',
-    title: 'Triquetra.Frontend',
+    titleTemplate: 'GÜNEŞ ŞİRKETİ',
+    title: 'GÜNEŞ ŞİRKETİ',
     htmlAttrs: {
       lang: 'en'
     },
@@ -39,8 +39,13 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/moment'
   ],
+
+  moment: {
+    defaultLocale: 'tr'
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

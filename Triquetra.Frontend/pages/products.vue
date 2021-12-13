@@ -1,13 +1,79 @@
 <template>
   <v-container>
     <v-row>
-      <v-col />
       <v-col>
         <v-card dark>
-          <v-card-title>Parça Ekle</v-card-title>
+          <v-card-title>
+            PARÇA EKLE
+          </v-card-title>
+          <v-card-text>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model="product.Name"
+                  outlined
+                  hide-details
+                  dark
+                  label="İsim"
+                  required
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model="product.Size"
+                  outlined
+                  hide-details
+                  dark
+                  type="number"
+                  label="Boyut"
+                  required
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model="product.DollarPrice"
+                  outlined
+                  hide-details
+                  dark
+                  type="number"
+                  label="Fiyat ($)"
+                  required
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-select
+                  v-model="product.ProductTypeId"
+                  outlined
+                  hide-details
+                  :items="productTypes"
+                  :item-text="item => item.name"
+                  :item-value="item => item.value"
+                  label="Tip"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col />
+              <v-col />
+              <v-col align="end">
+                <v-btn dark color="indigo darken-4" @click="saveProduct">
+                  KAYDET
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-card-text>
         </v-card>
       </v-col>
-      <v-col />
+      <v-col cols="3" />
+      <v-col cols="3">
+        <CurrentDate />
+      </v-col>
     </v-row>
     <v-row>
       <v-col class="text-center">
@@ -16,7 +82,7 @@
             <thead>
               <tr>
                 <th>
-                  Id
+                  #
                 </th>
                 <th>
                   İsim
@@ -56,7 +122,8 @@
                   {{ item.dollarPrice }}
                 </td>
                 <td class="text-left">
-                  {{ item.productTypeId }}
+                  <span v-if="item.productTypeId == 1">İnvertör</span>
+                  <span v-else>Panel</span>
                 </td>
               </tr>
             </tbody>
@@ -68,11 +135,15 @@
 </template>
 <script>
 import apiservice from '~/services/apiservice'
+import CurrentDate from '~/components/CurrentDate'
 
 export default {
+  components: { CurrentDate },
   data () {
     return {
-      products: []
+      products: [],
+      product: {},
+      productTypes: [{ value: 1, name: 'İnvertör' }, { value: 2, name: 'Panel' }]
     }
   },
   mounted () {
@@ -82,6 +153,12 @@ export default {
     getProducts () {
       apiservice.get('api/Product').then((data) => {
         this.products = data.data
+      }).catch(() => {
+      })
+    },
+    saveProduct () {
+      apiservice.post('api/Product', this.product).then((data) => {
+        this.getProducts()
       }).catch(() => {
       })
     }

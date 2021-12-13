@@ -24,6 +24,7 @@ namespace Triquetra.Core.Handlers.Queries
         {
             var entities = await Task.FromResult(_repository.ExchangeRates.GetAll());
             return _mapper.Map<IEnumerable<ExchangeRateDTO>>(entities);
+            //return _mapper.Map<IEnumerable<ExchangeRateDTO>>(entities).OrderByDescending(s => s.Date);
         }
     }
 }
