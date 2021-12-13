@@ -2,6 +2,7 @@
 using Triquetra.Domain.Data.Entities;
 using Triquetra.Domain.DTO;
 using Triquetra.Domain.DTO.Contracts;
+using Triquetra.Domain.DTO.ExchangeRates;
 using Triquetra.Domain.DTO.Materials;
 using Triquetra.Domain.DTO.Offers;
 using Triquetra.Domain.DTO.Products;
@@ -19,6 +20,7 @@ namespace Triquetra.Core.Mapper
             CreateMap<Product, ProductDTO>();
             CreateMap<Product, ProductTypeDTO>();
             CreateMap<Offer, OfferDTO>();
+            CreateMap<ExchangeRate, ExchangeRateDTO>();
         }
     }
 }

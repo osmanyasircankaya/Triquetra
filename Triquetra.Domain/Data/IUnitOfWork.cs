@@ -11,6 +11,7 @@ namespace Triquetra.Domain.Data
         IOfferRepository Offers { get; }
         IProductRepository Products { get; }
         IProductTypeRepository ProductTypes { get; }
+        IExchangeRateRepository ExchangeRates { get; }
         Task CommitAsync();
     }
 }
