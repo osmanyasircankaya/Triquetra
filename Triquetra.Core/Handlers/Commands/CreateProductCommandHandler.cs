@@ -20,30 +20,28 @@ namespace Triquetra.Core.Handlers.Commands
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
     {
         private readonly IUnitOfWork _repository;
-        // private readonly IValidator<CreateProductDTO> _validator;
+        private readonly IValidator<CreateProductDTO> _validator;
 
-        public CreateProductCommandHandler(IUnitOfWork repository
-            //IValidator<CreateProductDTO> validator
-        )
+        public CreateProductCommandHandler(IUnitOfWork repository, IValidator<CreateProductDTO> validator)
         {
             _repository = repository;
-            //   _validator = validator;
+            _validator = validator;
         }
 
         public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var model = request.Model;
 
-            // var result = _validator.Validate(model);
-            //
-            // if (!result.IsValid)
-            // {
-            //     var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
-            //     throw new InvalidRequestBodyException
-            //     {
-            //         Errors = errors
-            //     };
-            // }
+            var result = _validator.Validate(model);
+
+            if (!result.IsValid)
+            {
+                var errors = result.Errors.Select(x => x.ErrorMessage).ToArray();
+                throw new InvalidRequestBodyException
+                {
+                    Errors = errors
+                };
+            }
 
             var entity = new Product
             {

@@ -98,12 +98,12 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Dashboard',
+          title: 'Ana Sayfa',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Products',
+          title: 'Parçalar',
           to: '/products'
         }
       ],
