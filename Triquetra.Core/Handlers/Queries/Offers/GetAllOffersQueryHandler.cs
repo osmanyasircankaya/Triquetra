@@ -3,7 +3,7 @@ using MediatR;
 using Triquetra.Domain.Data;
 using Triquetra.Domain.DTO.Offers;
 
-namespace Triquetra.Core.Handlers.Queries
+namespace Triquetra.Core.Handlers.Queries.Offers
 {
     public class GetAllOffersQuery : IRequest<IEnumerable<OfferDTO>>
     {

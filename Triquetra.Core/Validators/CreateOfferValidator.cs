@@ -1,4 +1,3 @@
-using Triquetra.Domain.DTO;
 using FluentValidation;
 using Triquetra.Domain.DTO.Offers;
 
@@ -8,7 +7,7 @@ namespace Triquetra.Core.Validators
     {
         public CreateOfferValidator()
         {
-            RuleFor(x => x.SetupArea).GreaterThan(0).WithMessage("alan sıfırdan büyük olmalı");
+            RuleFor(x => x.SetupArea).GreaterThan(0).WithMessage("Kurulum alanı sıfırdan büyük olmalı");
         }
     }
 }
