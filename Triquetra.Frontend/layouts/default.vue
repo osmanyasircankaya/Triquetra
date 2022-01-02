@@ -98,6 +98,11 @@ export default {
           icon: 'mdi-cart-outline',
           title: 'Sepet',
           to: '/cart'
+        },
+        {
+          icon: 'mdi-playlist-check',
+          title: 'Geçmiş Teklifler',
+          to: '/previous-offers'
         }
       ],
       miniVariant: false,
