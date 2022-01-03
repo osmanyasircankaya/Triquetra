@@ -23,7 +23,7 @@ namespace Triquetra.Core.Handlers.Queries.Offers
         public async Task<IEnumerable<OfferDTO>> Handle(GetAllOffersQuery request, CancellationToken cancellationToken)
         {
             var entities = await Task.FromResult(_repository.Offers.GetAll());
-            return _mapper.Map<IEnumerable<OfferDTO>>(entities);
+            return _mapper.Map<IEnumerable<OfferDTO>>(entities).OrderByDescending(s => s.AddedOn);
         }
     }
 }
