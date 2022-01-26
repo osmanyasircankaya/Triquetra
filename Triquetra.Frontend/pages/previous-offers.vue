@@ -7,6 +7,12 @@
             <thead>
               <tr>
                 <th class="text-center">
+                  TARİH
+                </th>
+                <th class="text-center">
+                  NO
+                </th>
+                <th class="text-center">
                   KURULUM ALANI
                 </th>
                 <th class="text-center">
@@ -27,16 +33,19 @@
                 <th class="text-center">
                   İNDİRİMLİ FİYAT (TL)
                 </th>
-                <th class="text-center">
-                  TARİH
-                </th>
               </tr>
             </thead>
             <tbody>
               <tr
-                v-for="item in offers"
+                v-for="(item,idx) in offers"
                 :key="item.addedOn"
               >
+                <td>
+                  {{ $moment(item.addedOn).locale("tr").format("DD/MM/YYYY") }}
+                </td>
+                <td>
+                  {{ idx + 1 }}
+                </td>
                 <td>
                   {{ item.setupArea }}
                 </td>
@@ -63,9 +72,6 @@
                 </td>
                 <td v-else>
                   -
-                </td>
-                <td>
-                  {{ $moment(item.addedOn).locale("tr").format("DD/MM/YYYY") }}
                 </td>
               </tr>
             </tbody>
